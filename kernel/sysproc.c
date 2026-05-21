@@ -106,3 +106,20 @@ sys_lcg_rand(void)
 {
   return (uint64)lcg_rand();
 }
+
+// Set the calling process's group identifier.
+uint64
+sys_setgid(void)
+{
+  int gid;
+  argint(0, &gid);
+  myproc()->gid = gid;
+  return 0;
+}
+
+// Return the calling process's group identifier.
+uint64
+sys_getgid(void)
+{
+  return (uint64)myproc()->gid;
+}
