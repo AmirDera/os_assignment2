@@ -124,6 +124,11 @@ void            releasesleep(struct sleeplock*);
 int             holdingsleep(struct sleeplock*);
 void            initsleeplock(struct sleeplock*, char*);
 
+// rand.c
+void            rand_init(void);
+void            lcg_srand(uint);
+uint            lcg_rand(void);
+
 // string.c
 int             memcmp(const void*, const void*, uint);
 void*           memmove(void*, const void*, uint);

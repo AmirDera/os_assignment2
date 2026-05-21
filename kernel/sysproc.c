@@ -89,3 +89,20 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+// Seed the kernel LCG pseudo-random number generator.
+uint64
+sys_lcg_srand(void)
+{
+  int seed;
+  argint(0, &seed);
+  lcg_srand((uint)seed);
+  return 0;
+}
+
+// Advance the kernel LCG and return the next pseudo-random value.
+uint64
+sys_lcg_rand(void)
+{
+  return (uint64)lcg_rand();
+}
