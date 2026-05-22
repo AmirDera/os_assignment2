@@ -136,6 +136,12 @@ int             israeli_acquire(int lock_id);
 int             israeli_release(int lock_id);
 int             israeli_destroy(int lock_id);
 
+// teams.c
+void            teams_init(void);
+void            teams_reset(void);
+int             team_score_inc(int team);
+int             team_score_get(int team);
+
 // string.c
 int             memcmp(const void*, const void*, uint);
 void*           memmove(void*, const void*, uint);

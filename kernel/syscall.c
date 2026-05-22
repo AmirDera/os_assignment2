@@ -109,6 +109,9 @@ extern uint64 sys_israeli_create(void);
 extern uint64 sys_israeli_acquire(void);
 extern uint64 sys_israeli_release(void);
 extern uint64 sys_israeli_destroy(void);
+extern uint64 sys_teams_reset(void);
+extern uint64 sys_team_score_inc(void);
+extern uint64 sys_team_score_get(void);
 
 // An array mapping syscall numbers from syscall.h
 // to the function that handles the system call.
@@ -142,6 +145,9 @@ static uint64 (*syscalls[])(void) = {
 [SYS_israeli_acquire] sys_israeli_acquire,
 [SYS_israeli_release] sys_israeli_release,
 [SYS_israeli_destroy] sys_israeli_destroy,
+[SYS_teams_reset]     sys_teams_reset,
+[SYS_team_score_inc]  sys_team_score_inc,
+[SYS_team_score_get]  sys_team_score_get,
 };
 
 void
